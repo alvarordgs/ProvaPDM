@@ -50,16 +50,20 @@ class CustomerDAO(context: Context) {
         return customerList;
     }
 
-    fun update(costumer: Customer): Boolean {
+    fun update(customer: Customer): Boolean {
         val db = this.myDataBase.writableDatabase;
         val cv = ContentValues().apply {
-            put("nome", costumer.name);
-            put("telefone", costumer.phone);
-            put("email", costumer.email);
-            put("ativo", costumer.isActive)
+            put("nome", customer.name);
+            put("telefone", customer.phone);
+            put("email", customer.email);
+            put("ativo", customer.isActive)
         }
 
-        val affectedRows = db.update("cliente", cv, "cpf = ?", arrayOf(costumer.cpf));
+        Log.i("Customer Data", " -> " + customer)
+
+        val affectedRows = db.update("cliente", cv, "cpf = ?", arrayOf(customer.cpf));
+
+        Log.i("Linhas afetadas", " -> " + affectedRows)
 
         db.close();
 

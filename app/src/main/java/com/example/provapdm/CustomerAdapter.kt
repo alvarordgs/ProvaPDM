@@ -1,10 +1,14 @@
 package com.example.provapdm
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -36,17 +40,18 @@ class CustomerAdapter(private val context : Context, private val customers: Muta
         }
     }
 
-    /*
-    private fun onButtonClickAlterar(position: Int, context: Context) {
-        val cliente = clientes[position]
 
-        val intent = Intent(context, AlterarDadosClienteActivity::class.java)
+    private fun onButtonClickEditCustomer(position: Int, context: Context) {
+        val customer = customers[position]
+
+        val intent = Intent(context, CustomerEditActivity::class.java)
         val bundle = Bundle()
-        bundle.putString("nomeCliente", cliente.nome)
-        bundle.putString("cpfCliente", cliente.cpf)
-        bundle.putString("telefoneCliente", cliente.telefone)
-        bundle.putString("emailCliente", cliente.email)
+        bundle.putString("customerName", customer.name)
+        bundle.putString("customerCPF", customer.cpf)
+        bundle.putString("customerPhone", customer.phone)
+        bundle.putString("customerEmail", customer.email)
         intent.putExtras(bundle)
+
         if (context is Activity) {
             context.startActivity(intent)
         }
@@ -54,40 +59,20 @@ class CustomerAdapter(private val context : Context, private val customers: Muta
         notifyItemChanged(position)
     }
 
-    private fun onButtonClickExcluir(position: Int) {
-        val cliente = clientes[position]
-
-        val clienteDAO = ClienteDAO(context)
-        val desativou = clienteDAO.desativarCliente(cliente)
-
-        if (desativou) {
-            cliente.situacao = "INATIVO"
-            clientes[position] = cliente
-            notifyItemChanged(position)
-            Toast.makeText(context, "Cliente desativado com sucesso!", Toast.LENGTH_LONG).show()
-        } else {
-            Toast.makeText(context, "Erro ao desativar o cliente.", Toast.LENGTH_LONG).show()
-        }
-    }*/
-
     inner class CustomerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.cardTitleCustomer)
         val cpf: TextView = itemView.findViewById(R.id.cardValueCpfCustomer)
         val phone: TextView = itemView.findViewById(R.id.cardValuePhoneCustomer)
         val email: TextView = itemView.findViewById(R.id.cardValueEmailCustomer)
         val isActive: TextView = itemView.findViewById(R.id.cardValueActiveCustomer)
+        val editButton: Button = itemView.findViewById(R.id.cardButtonEditCustomer)
 
-        /*
+
         init {
-            buttonAlterar.setOnClickListener {
-                onButtonClickAlterar(adapterPosition, context)
+            editButton.setOnClickListener {
+                onButtonClickEditCustomer(adapterPosition, context)
             }
-
-            buttonExcluir.setOnClickListener{
-                onButtonClickExcluir(adapterPosition)
-            }
-
-        }*/
+        }
 
     }
 }
