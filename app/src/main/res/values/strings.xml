@@ -14,7 +14,7 @@
     <string name="hint_email">E-mail</string>
     <string name="button_cadastrar">Cadastrar</string>
     <string name="hint_tipo_de_recheio">Tipo de recheio</string>
-    <string name="hint_peso_do_queijo">Peso do queijo</string>
+    <string name="hint_peso_do_queijo">Peso do queijo em gramas</string>
     <string name="hint_cpf_do_cliente">CPF do cliente</string>
     <string name="title_editar_cliente">Editar cliente</string>
 </resources>

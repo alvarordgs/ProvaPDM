@@ -18,10 +18,10 @@ class CustomerDAO(context: Context) {
             put("ativo", customer.isActive)
         }
 
-        val resultado = db.insert("cliente", null, cv);
-        Log.i("Teste", "Inserção $resultado");
+        val result = db.insert("cliente", null, cv);
+        Log.i("Teste", "Inserção $result");
 
-        if(resultado == -1L) {
+        if(result == -1L) {
             throw Exception("Não foi possível inserir cliente.");
         }
 
@@ -48,6 +48,29 @@ class CustomerDAO(context: Context) {
 
         cursor.close();
         return customerList;
+    }
+
+    fun getActiveCustomerByCPF(cpf: String): Customer? {
+        val db = this.myDataBase.readableDatabase;
+        val sql = "SELECT * FROM cliente WHERE cpf = ? AND ativo = 1";
+        val cursor = db.rawQuery(sql, arrayOf(cpf));
+        var customer: Customer? = null
+
+        if(cursor.moveToFirst()) {
+            val name = cursor.getString(cursor.getColumnIndexOrThrow("nome"))
+            val customerCPF = cursor.getString(cursor.getColumnIndexOrThrow("cpf"))
+            val phone = cursor.getString(cursor.getColumnIndexOrThrow("telefone"))
+            val email = cursor.getString(cursor.getColumnIndexOrThrow("email"))
+            val isActive = cursor.getString(cursor.getColumnIndexOrThrow("ativo"))
+
+            customer = Customer(customerCPF, name, phone, email, isActive.toInt())
+        }
+
+        cursor.close()
+
+        db.close()
+
+        return customer
     }
 
     fun update(customer: Customer): Boolean {

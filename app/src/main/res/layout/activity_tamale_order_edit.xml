@@ -4,76 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TamaleOrderRegisterActivity">
+    tools:context=".TamaleOrderEditActivity">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textEditTamaleOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cadastrar_pedido"
+        android:text="Editar pedido"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextFillingTypeCreateTamaleOrderId"
+        app:layout_constraintBottom_toTopOf="@+id/textIdTamaleOrderId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
 
-    <EditText
-        android:id="@+id/editTextFillingTypeCreateTamaleOrderId"
+
+    <TextView
+        android:id="@+id/textIdTamaleOrderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/hint_tipo_de_recheio"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCheeseWeightCreateTamaleOrderId"
+        android:text="Id do pedido"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textCustomerCPFEditTamaleOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textEditTamaleOrder"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textCustomerCPFEditTamaleOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CPF do cliente"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/editFillingTypeTamaleOrderId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIdTamaleOrderId"
         app:layout_constraintVertical_bias="0.5" />
 
     <EditText
-        android:id="@+id/editTextCheeseWeightCreateTamaleOrderId"
+        android:id="@+id/editFillingTypeTamaleOrderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/hint_peso_do_queijo"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/editTextCustomerCPFCreateTamaleOrderId"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editCheeseWeightTamaleOrderId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextFillingTypeCreateTamaleOrderId"
+        app:layout_constraintTop_toBottomOf="@+id/textCustomerCPFEditTamaleOrder"
         app:layout_constraintVertical_bias="0.5" />
 
     <EditText
-        android:id="@+id/editTextCustomerCPFCreateTamaleOrderId"
+        android:id="@+id/editCheeseWeightTamaleOrderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
-        android:hint="@string/hint_cpf_do_cliente"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCreateTamaleOrderId"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUpdateTamaleOrderId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCheeseWeightCreateTamaleOrderId"
+        app:layout_constraintTop_toBottomOf="@+id/editFillingTypeTamaleOrderId"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/buttonCreateTamaleOrderId"
+        android:id="@+id/buttonUpdateTamaleOrderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_cadastrar"
+        android:text="Editar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCustomerCPFCreateTamaleOrderId"
+        app:layout_constraintTop_toBottomOf="@+id/editCheeseWeightTamaleOrderId"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
