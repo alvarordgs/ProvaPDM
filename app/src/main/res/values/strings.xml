@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ProvaPDM</string>
+    <string name="mii_bao">Mii Bão</string>
+    <string name="clientes">Clientes</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="cadastrar_cliente">Cadastrar cliente</string>
+    <string name="ver_clientes">Ver clientes</string>
+    <string name="cadastrar_pedido">Cadastrar pedido</string>
+    <string name="ver_pedidos">Ver pedidos</string>
+    <string name="cadastrar_cliente_title">Cadastrar cliente</string>
+    <string name="hint_cpf">CPF</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_telefone">Telefone</string>
+    <string name="hint_email">E-mail</string>
+    <string name="button_cadastrar">Cadastrar</string>
+    <string name="hint_tipo_de_recheio">Tipo de recheio</string>
+    <string name="hint_peso_do_queijo">Peso do queijo</string>
+    <string name="hint_cpf_do_cliente">CPF do cliente</string>
+</resources>
