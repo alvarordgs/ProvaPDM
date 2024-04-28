@@ -50,6 +50,7 @@ class CustomerAdapter(private val context : Context, private val customers: Muta
         bundle.putString("customerCPF", customer.cpf)
         bundle.putString("customerPhone", customer.phone)
         bundle.putString("customerEmail", customer.email)
+        bundle.putInt("customerIsActive", customer.isActive)
         intent.putExtras(bundle)
 
         if (context is Activity) {
