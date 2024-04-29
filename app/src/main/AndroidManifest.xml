@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProvaPDM">
         <activity
+            android:name=".TamaleOrderBackupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BackupActivity"
+            android:exported="false" />
+        <activity
             android:name=".TamaleOrderEditActivity"
             android:exported="false" />
         <activity
